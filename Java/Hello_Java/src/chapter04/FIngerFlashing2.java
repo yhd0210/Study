@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class FIngerFlashing2 {
+    public static String[] value = new String[]{"가위", "바위", "보"};
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
@@ -11,7 +12,6 @@ public class FIngerFlashing2 {
         System.out.print("가위바위보를 얼마나 할지 입력하세요 : ");
         int n = sc.nextInt();
         int cnt = 0, win = 0, lose = 0, equal = 0;
-        String computerHandString;
 
         while (true){
             System.out.println("---------------------------------------");
@@ -19,9 +19,7 @@ public class FIngerFlashing2 {
             String userHand = sc.next();
             System.out.println("---------------------------------------");
             System.out.print("컴퓨터가 낸 것 > ");
-            int computerHand = rand.nextInt(3);
-            computerHandString = computerHandResult(computerHand);
-            int x = Result(userHand, computerHandString);
+            int x = gameResult(userHand, computerHandResult(rand.nextInt(3)));
             cnt ++;
             if (x == 0){
                 win++;
@@ -40,12 +38,9 @@ public class FIngerFlashing2 {
                 System.out.println("---------------------------------------");
             }
             if (n==cnt){
-                System.out.println();
-                System.out.println();
-                System.out.println("=======================================");
-                System.out.printf("총 전적 || 승 : %d || 패 : %d || 무 : %d\n", win, lose, equal);
-                System.out.println("=======================================");
-                System.out.println();
+                System.out.println("\n\n=========================================");
+                System.out.printf("|| 총 전적 || 승 : %d || 패 : %d || 무 : %d ||\n", win, lose, equal);
+                System.out.println("=========================================\n\n");
                 System.out.println("프로그램 종료");
                 break;
             }
@@ -55,21 +50,21 @@ public class FIngerFlashing2 {
         String result = "";
         switch (x) {
             case 0:
-                System.out.println("가위");
-                result = "가위";
+                System.out.println(value[0]);
+                result = value[0];
                 break;
             case 1:
-                System.out.println("바위");
-                result = "바위";
+                System.out.println(value[1]);
+                result = value[1];
                 break;
             case 2:
-                System.out.println("보");
-                result = "보";
+                System.out.println(value[2]);
+                result = value[2];
                 break;
         }
         return result;
     }
-    public static int Result(String a, String b){
+    public static int gameResult(String a, String b){
         int result = 0;
         if ( a.equals(b)){
             System.out.println("비겼습니다.");
@@ -78,28 +73,28 @@ public class FIngerFlashing2 {
         else {
             switch(a){
                 case "가위":
-                    if (b.equals("바위")) {
+                    if (b.equals(value[1])) {
                         System.out.println("졌습니다.");
                         result = 1;
-                    } else if (b.equals("보")) {
+                    } else if (b.equals(value[2])) {
                         System.out.println("이겼습니다.");
                     }
                     break;
                 case "바위":
-                    if (b.equals("가위")) {
+                    if (b.equals(value[0])) {
                         System.out.println("이겼습니다.");
                     }
-                    else if (b.equals("보")) {
+                    else if (b.equals(value[2])) {
                         System.out.println("졌습니다.");
                         result = 1;
                     }
                     break;
                 case "보":
-                    if (b.equals("가위")) {
+                    if (b.equals(value[0])) {
                         System.out.println("졌습니다.");
                         result = 1;
                     }
-                    else if (b.equals("바위")) {
+                    else if (b.equals(value[1])) {
                         System.out.println("이겼습니다.");
                     }
                     break;
