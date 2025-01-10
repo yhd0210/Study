@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLayers with OpenStreetMap</title>
+    <!--OpenLayers는 지도를 표시하기 위한 자바스크립트 라이브러리-->>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
+    <!---OpenLayers 라이브러리를 CDN에서 비동기적으로 로드-->
+    <script defer src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+    <!--JQuery 라이브러리를 로드-->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script defer src = "/main.js"></script>
+
+    <style>
+        /* class map */
+        .map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id = "map" class="map"></div>
+
+    <script>
+        var map = new ol.Map({
+            target: 'map',
+            layers:[
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view : new ol.View({
+                center: ol.proj.fromLonLat([127.3920, 36.3380]),
+                zoom: 17
+            })
+        });
+    </script>
+    
+</body>
+</html>
