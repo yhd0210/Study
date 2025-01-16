@@ -37,5 +37,13 @@ public class EnumWeekExample1 {
         System.out.println("오늘 요일: " + today); // today 출력 == today.toString()
         System.out.println("ordinal: " + today.ordinal()); // 선언된 순서에 따라 0부터 시작하는 정수 인덱스 출력
         System.out.println("name: " + today.name()); // 선언된 정확한 이름을 문자열로 반환 (불변)
+
+        if (today == Week.SUNDAY){
+            System.out.println("일요일에는 영화를 봅니다.");
+        } else if (today == Week.SATURDAY) {
+            System.out.println("토요일에느 축구를 합니다.");
+        } else {
+            System.out.println("열심히 자바 공부를 합니다.");
+        }
     }
 }
