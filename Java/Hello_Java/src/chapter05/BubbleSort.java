@@ -5,11 +5,6 @@ public class BubbleSort {
         int[] intArray = {5,3,2,8,7};
         PrintArray.printIntArray(ArrayBubbleSort(intArray));
     }
-    public static void swap(int a, int b) {
-        int tmp = a;
-        a = b;
-        b = tmp;
-    }
     public static int[] ArrayBubbleSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {  // i는 n-1까지 반복
