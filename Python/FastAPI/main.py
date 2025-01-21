@@ -1,12 +1,12 @@
-from fastapi import FastAPI
-from typing import Optional, Union
+from fastapi import FastAPI, Query
+from typing import Optional, Union, List
 from enum import Enum
 from pydantic import BaseModel
 
 class Item(BaseModel):
     name: str
     description: str | None = None
-    price: float  # 타입 어노테이션 추가
+    price: float
     tax: float | None = None
 
 class ModelName(str, Enum):
@@ -65,9 +65,32 @@ async def read_user_item(
 #         )
 #     return item
 
+# @app.get("/items/")
+# async def read_item(skip : int = 0, limit: int = 10):
+#     return fake_items_db [skip: skip + limit]
+
 @app.get("/items/")
-async def read_item(skip : int = 0, limit: int = 10):
-    return fake_items_db [skip: skip + limit]
+async def read_items(
+    q : Union[str, None]=Query(
+        default=None,
+        alias = "item-query",
+        min_length=3, 
+        title="Query string",
+        dscription="Query string for the items to serach in the database that have a good match",
+        max_length=50, 
+        pattern="^fixedquery",
+        deprecated=True,
+    ),
+):
+    results = {"items":[{"item_name": "Foo"}, {"item_name": "Bar"}]}
+    if q:
+        results.update({"q":q})
+    return results
+
+# @app.get("/items/")
+# async def read_items(q:Union[List[str], None] = Query(default=None)): # 제공된 값이 없으면  기본 list 값을 정의 할 수 있음
+#     query_items = {"q":q}
+#     return query_items
 
 @app.get("/users/me")
 async def read_user_me():
