@@ -72,7 +72,7 @@ public class ArrayInArrayExample {
                 System.out.printf("%6s", "Avg");
                 break;
             }
-            System.out.printf("%6s", "test" + col);
+            System.out.printf("%6s", "UserFactoryTest" + col);
         }
         System.out.println();
 
