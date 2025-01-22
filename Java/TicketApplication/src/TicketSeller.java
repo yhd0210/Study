@@ -8,16 +8,7 @@ public class TicketSeller {
     }
 
     public void sellTo(Audience audience) {
-        if(audience.getBag().HasInvitation()) {
-            Ticket ticket = ticketOffice.getTicket();
-            audience.getBag().setTicket(ticket);
-            System.out.println("초대장이 있어 입장합니다.");
-        } else {
-            Ticket ticket = ticketOffice.getTicket();
-            audience.getBag().minusAmount(ticket.getFee());
-            ticketOffice.plusAmont(ticket.getFee());
-            audience.getBag().setTicket(ticket);
-            System.out.println("티켓 구매후 입장 합니다.");
-        }
+        Ticket ticket = ticketOffice.getTicket();
+        System.out.println(audience.buy(ticket));
     }
 }

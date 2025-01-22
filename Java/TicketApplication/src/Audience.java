@@ -9,4 +9,15 @@ public class Audience {
     public Bag getBag() {
         return bag;
     }
+
+    public Long buy(Ticket ticket) {
+        if(bag.HasInvitation()) {
+            bag.setTicket(ticket);
+            return 0L;
+        } else {
+            bag.minusAmount(ticket.getFee());
+            bag.setTicket(ticket);
+            return ticket.getFee();
+        }
+    }
 }
