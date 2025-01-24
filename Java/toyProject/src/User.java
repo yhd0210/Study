@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    static List<User> userDb = new ArrayList<>();
+    private static List<User> userDb = new ArrayList<>();
 
     static {
         userDb.add(new User("dam", "1111", "010-0000-0001"));
@@ -10,14 +10,29 @@ public class User {
         userDb.add(new User("yhd", "qwer1234", "010-0000-0003"));
     }
 
-    String userName;
-    String userPW;
-    String phone;
+    private String userName;
+    private String userPW;
+    private String phone;
 
-
-    User(String userName, String userPW, String phone) {
+    public User(String userName, String userPW, String phone) {
         this.userName = userName;
         this.userPW = userPW;
         this.phone = phone;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getUserPW() {
+        return userPW;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public static List<User> getUserDb() {
+        return userDb;
     }
 }
