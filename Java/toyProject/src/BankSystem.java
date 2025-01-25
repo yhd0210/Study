@@ -1,7 +1,13 @@
 import java.util.*;
 
 public class BankSystem {
-    public static boolean login(String userName, String userPW) {
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static boolean login() {
+        System.out.print("사용자 이름을 입력하세요: ");
+        String userName = scanner.nextLine();
+        System.out.print("비밀번호를 입력하세요: ");
+        String userPW = scanner.nextLine();
         for (User user : User.getUserDb()) {
             if (user.getUserName().equals(userName) && user.getUserPW().equals(userPW)) {
                 System.out.println("로그인 성공! 환영합니다, " + userName + "님.");
@@ -13,7 +19,6 @@ public class BankSystem {
     }
 
     public static boolean register() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("회원가입을 진행합니다.");
         System.out.print("사용자 이름을 입력하세요: ");
         String newUserName = scanner.nextLine();
@@ -41,6 +46,8 @@ public class BankSystem {
             System.out.println("계좌 정보를 찾을 수 없습니다.");
         }
     }
+
+
 
     public static void deposit(String userName, int amount) {
         Bank userBank = Bank.searchBankUser(userName);  // Bank에서 계좌 정보 찾기

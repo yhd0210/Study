@@ -6,9 +6,9 @@ public class Bank {
     static List<Bank> bankUserDb = new ArrayList<>();
 
     static {
-        bankDb.add(new Bank("ryu", BankList.신한은행, "0123456789", 100000));
-        bankDb.add(new Bank( "dam",BankList.국민은행, "0123456789", 100000));
-        bankDb.add(new Bank("yhd", BankList.농협, "0123456789", 100000));
+        bankDb.add(new Bank("ryu", BankList.신한은행, "11111111", 100000));
+        bankDb.add(new Bank( "dam",BankList.국민은행, "11111234", 100000));
+        bankDb.add(new Bank("yhd", BankList.농협, "12341111", 100000));
     }
 
     String userName;
@@ -25,6 +25,15 @@ public class Bank {
 
     public BankList getBank() {
         return bank;
+    }
+
+    public static boolean searchAccount(String account) {
+        for (Bank bank : Bank.bankDb) {
+            if (bank.getAccount().equals(account)){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static Bank searchBankUser(String userName) {
