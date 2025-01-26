@@ -3,12 +3,13 @@ import java.util.List;
 
 public class Bank {
     static List<Bank> bankDb = new ArrayList<>();
-    static List<Bank> bankUserDb = new ArrayList<>();
+    static List<Bank> userBanks;
 
     static {
-        bankDb.add(new Bank("ryu", BankList.신한은행, "11111111", 100000));
-        bankDb.add(new Bank( "dam",BankList.국민은행, "11111234", 100000));
-        bankDb.add(new Bank("yhd", BankList.농협, "12341111", 100000));
+        bankDb.add(new Bank("ryu",  "11111111", 100000));
+        bankDb.add(new Bank( "dam", "11111234", 100000));
+        bankDb.add(new Bank("yhd",  "12341111", 100000));
+        bankDb.add(new Bank("yhd", "12341234", 100000));
     }
 
     String userName;
@@ -16,9 +17,8 @@ public class Bank {
     String account;
     int balance;
 
-    Bank(String userName, BankList bank, String account, int balance){
+    Bank(String userName,  String account, int balance){
         this.userName = userName;
-        this.bank = bank;
         this.account = account;
         this.balance = balance;
     }
@@ -36,14 +36,17 @@ public class Bank {
         return true;
     }
 
-    public static Bank searchBankUser(String userName) {
+    public static List<Bank> searchBankUser(String userName) {
+        List<Bank> userBanks = new ArrayList<>();
         for (Bank bank : Bank.bankDb) {
             if (bank.getUserName().equals(userName)) {
-                return bank;
+                userBanks.add(bank);
             }
         }
-        System.out.println("해당 사용자 이름을 가진 계좌를 찾을 수 없습니다.");
-        return null;
+        if (userBanks.isEmpty()) {
+            System.out.println("해당 사용자 이름을 가진 계좌를 찾을 수 없습니다.");
+        }
+        return userBanks;
     }
 
     public static List<Bank> getBankDb() {
