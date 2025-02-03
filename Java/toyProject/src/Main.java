@@ -5,9 +5,7 @@ public class Main {
 
             // 로그인 또는 회원가입 성공 시 User 객체 반환
             while (user == null) {
-                if (UserService.loginSignUpPage()) {
-                    user = UserService.startSystem();
-                }
+                user = UserService.startSystem();
             }
 
             // 메인 서비스 페이지

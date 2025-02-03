@@ -4,7 +4,7 @@ public class BankSystem {
     public static Scanner scanner = new Scanner(System.in);
 
     // 로그인
-    public static boolean login() {
+    public static User login() {
         System.out.print("사용자 이름을 입력하세요: ");
         String userName = scanner.nextLine();
         System.out.print("비밀번호를 입력하세요: ");
@@ -13,11 +13,11 @@ public class BankSystem {
             if (user.getUserName().equals(userName) && user.getUserPW().equals(userPW)) {
                 System.out.println("로그인 성공! 환영합니다, " + userName + "님.");
                 UserToken.getUserTokensDb().add(new UserToken(userName,true));
-                return true;
+                return user;
             }
         }
         System.out.println("로그인 실패: 사용자 이름 또는 비밀번호가 잘못되었습니다.");
-        return false;
+        return null;
     }
 
     // 회원가입
