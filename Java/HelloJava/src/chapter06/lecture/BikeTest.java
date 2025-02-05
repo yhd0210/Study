@@ -9,6 +9,8 @@ public class BikeTest {
         bike.accelerate(1);
         bike.accelerate(2);
         bike.accelerate(-1);
+
         bike.stop();
     }
 }
+

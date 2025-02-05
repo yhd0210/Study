@@ -8,7 +8,7 @@ public class VariableExample {
         // 인스턴스 생성
         Scope instance = new Scope();
 
-        System.out.println("인스턴스 변수 (접근하려면 인스턴스 필요) : " + instance.instanceVariable);
+        System.out.println("인스턴스 변수 (접근하려면 인스턴스 필요): " + instance.instanceVariable);
 
         instance.doMethod();
     }

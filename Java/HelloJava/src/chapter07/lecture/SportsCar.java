@@ -1,10 +1,11 @@
 package chapter07.lecture;
 
 public class SportsCar extends Car {
-
+    
     public boolean isCoupe;
 
-    public int speed;
+    // 아래 nameHiding 을 지양할 것(상위 클래스와 같은 이름의 변수 선언)
+    // public int speed;
 
     public SportsCar() {
         // 맨위에 컴파일러가 super() 자동 추가
