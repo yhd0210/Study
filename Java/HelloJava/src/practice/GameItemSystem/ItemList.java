@@ -23,7 +23,7 @@ public class ItemList {
 
     public static boolean isSearchItemSellable(String itemName) {
         for (GameItemInterface gameItemInterface : itemTypeList) {
-            if (gameItemInterface.getItmeName().equals(itemName)) {
+            if (gameItemInterface.getItemName().equals(itemName)) {
                 return isSellable();
             }
         }

@@ -6,7 +6,7 @@ public class Car {
 
     protected int numberOfDoor;
 
-    protected Car() {}
+    public Car() {}
 
     protected Car(int numberOfDoor) {
         this.numberOfDoor = numberOfDoor;
