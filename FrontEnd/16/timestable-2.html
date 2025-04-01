@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/timestable.css" />
+    <title>구구단 - for문</title>
+  </head>
+  <body>
+    <script>
+      document.write(`<div class="container">`);
+
+      for (let i = 2; i <= 9; i++) {
+        // i는 단
+
+        document.write(`<div class="times">
+                          <h3>${i}단</h3>
+                        `);
+        for (let j = 1; j <= 9; j++) {
+          // j는 곱할 수
+          document.write(`${i} X ${j} = ${i * j} <br>`);
+        }
+        document.write(`</div>`);
+      }
+      document.write(`</div>`);
+    </script>
+  </body>
+</html>

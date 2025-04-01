@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+</head>
+<body>
+    <script>
+        function compareNumber(x, y) {
+            if (x==y) {
+                alert('같습니다.');
+            } else {
+                alert((x > y) ? 
+                `${x}(이)가 ${y}보다 큽니다.` : 
+                `${y}(이)가 ${x}보다 큽니다.`)
+            }
+
+        }
+
+        let num1 = prompt('비교할 첫 번쨰 숫자:');
+        let num2 = prompt('비교할 두 번쨰 숫자:');
+        
+        compareNumber(num1, num2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>짝수 더하기</title>
+    <style>
+      body {
+        padding-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let n = 10;
+      let sum = 0;
+      let i;
+
+      for (i = 1; i <= n; i++) {
+        if (i % 2 === 1)
+          // 홀수
+          continue;
+        sum += i;
+
+        document.write(`${i - 1} ------- ${sum} <br>`);
+      }
+    </script>
+  </body>
+</html>

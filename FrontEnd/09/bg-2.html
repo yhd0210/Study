@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>불릿 바꾸기</title>
+  </head>
+  <style>
+    /* background-position - 배경 이미지의 수평 위치 또는 수직 위치 값 지정
+    background-position: <수평 위치> <수직 위치>;
+    수평 위치: left | center | right | <백분율> | <길이 값>
+    수직 위치: top | center | bottom | <백분율> | <길이 값>
+     */
+    ul {
+      list-style: none;
+      margin-left: -30px;
+    }
+    li {
+      background-image: url('images/book-icon.png');
+      background-repeat: no-repeat;
+      line-height: 40px;
+      background-position: 0px 4.5px;
+      padding-left: 50px; /* 그림 너비 41px */
+    }
+  </style>
+  <body>
+    <h1>이지스퍼블리싱</h1>
+    <ul>
+      <li>회사소개</li>
+      <li>도서</li>
+      <li>자료실</li>
+      <li>질문답변</li>
+      <li>동영상강의</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 폰트 사용하기</title>
+    <!-- 1. <link> 태그 사용 : 브라우저 성능 최적화 측면에서 가장 권장되는 방법-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    
+    <style>
+      /* 2. CSS 파일 내부에서 @import를 이용해 폰트를 가져오는 방법 */
+      /* <link> 방식보다 로딩 속도가 느림 */
+      /* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
+      .html {
+        font-family: "Dancing Script", cursive;
+      }
+    </style>
+
+    <!-- <style>
+      /* 3. 웹폰트 파일을 직접 호스팅하기 (Self-hosting) : 네트워크 차단 가능성 있을 경우 */
+       @font-face {
+        font-family: 'Ostrich';
+        src: local('Ostrich Sans'), 
+              url('fonts/ostrich-sans-bold.woff') format('woff'), 
+              url('fonts/ostrich-sans-bold.ttf') format('truetype'), 
+              url('fonts/ostrich-sans-bold.svg') format('svg');
+      }
+      .html {
+        font-family:'Ostrich', sans-serif;
+      }
+    </style> -->
+</head>
+<body>
+  <h1 class="html">HTML</h1>
+  <h1>CSS</h1>
+</body>
+</html>

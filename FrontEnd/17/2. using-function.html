@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수를 사용하지 않았을 때</title>
+</head>
+<body>
+    <script>
+        // 실행부를 위쪽에
+        addNumber();
+        addNumber();
+        
+        // 함수 선언부를 아래쪽에
+        function addNumber() {
+            let num1 = 2;
+            let num2 = 3;
+
+            let sum = num1 + num2;
+
+            alert(`결과 값 : ${sum}`);
+        }
+        
+    </script> 
+</body>
+</html>

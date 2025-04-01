@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>선형 그라데이션</title>
+    <style>
+      div {
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+      }
+      .grad {
+        /* css3를 지원하지 않는 브라우저용*/
+        background: #06f;
+        background: linear-gradient(180deg, #06f, white 30%, #06f);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grad"></div>
+  </body>
+</html>

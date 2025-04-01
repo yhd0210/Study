@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 1</title>
+</head>
+<body>
+	<h2>4의 배수일까 아닐까</h2>
+
+	<script>
+    let num = prompt('4의 배수일까? 아닐까?');
+
+    if (num !== null && num.trim() !== '') { // 취소 또는 빈 입력 방지
+      num = Number(num);
+      if (!isNaN(num) && num % 4 === 0) {
+        document.write(`${num}는(은) 4의 배수입니다.`);
+      } 
+      else if (!isNaN(num)) {
+        document.write(`${num}는(은) 4의 배수가 아닙니다.`);
+      }
+    }
+	</script>
+</body>
+</html>

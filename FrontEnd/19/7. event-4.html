@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM event 객체</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/cat.jpg" id="cat" />
+    </div>
+
+    <script>
+      // Do it! 이벤트 대상에 접근하기 - this 예약어 사용
+      // 화살표 함수 (람다식에서는 쓸 수 없음)
+      let cat = document.querySelector('#cat');
+
+      cat.onclick = function (event) {
+        alert(`이미지 파일 : ${this.src}`); // 이미지 파일 경로 출력
+      };
+
+      // cat.onclick = (event) =>  {
+      //   alert(`이미지 파일 : ${event.target.src}`); // 이미지 파일 경로 출력
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>
+      <label><input type="checkbox" value="s_3">선물용 3kg</label>
+      <input type="number" min="0" max="5" value="0">개 (최대 5개)
+    </li>
+    <li>
+      <label><input type="checkbox" value="s_5">선물용 5kg</label>
+      <input type="number" min="0" max="3" value="3">개 (최대 3개)
+    </li>
+
+    <input type="range" min="0" max="100" step="10" value="20"
+    oninput="document.getElementById('selected-value').innerText = this.value">
+    <span id="selected-value">20</span>
+  </ul>
+</body>
+</html>

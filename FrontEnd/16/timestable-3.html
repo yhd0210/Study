@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/timestable.css" />
+    <title>구구단 - for문</title>
+  </head>
+  <body>
+    <script>
+      // 구구단을 4단까지만 출력하도록 수정
+      document.write(`<div class="container">`); // 컨테이너 시작
+
+      for (let i = 2; i <= 9; i++) {
+        // i는 단
+
+        // 단시작
+        document.write(`<div class="times">
+                          <h3>${i}단</h3>
+                        `);
+        for (let j = 1; j <= 9; j++) {
+          // j는 곱할 수
+          document.write(`${i} X ${j} = ${i * j} <br>`); // 곱셈 결과 출력
+        }
+
+        document.write(`</div>`); // 단 끝
+
+        if (i === 4) break;
+      }
+      document.write(`</div>`); // 컨테이너 끝
+    </script>
+  </body>
+</html>

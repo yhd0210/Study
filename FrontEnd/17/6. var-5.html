@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>블록 스코프</title>
+  </head>
+  <body>
+    <script>
+      // Do it! let 변수를 사용해 1부터 10까지 더하는 코드를 작성하기
+
+      function sum() {
+        let result = 0;
+
+        // 1부터 10까지 더하기
+        for (let i = 1; i <= 10; i++) {
+          result += i;
+        }
+
+        console.log(result); // 55 출력
+      }
+
+      sum();
+      
+      console.log(result);  // ReferenceError: result is not defined
+    </script>
+  </body>
+</html>

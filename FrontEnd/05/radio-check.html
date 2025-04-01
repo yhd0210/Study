@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레드향 주문하기</title>
+</head>
+<body>
+  <!-- value 속성 : 선택한 체크박스 또는 라디오 버튼을 서버에게 알려줄때 넘겨줄 값 -->
+  <!-- checked 속성 : 체크가 되어있다는 뜻, 기본으로 선택하고 싶은 항목 세팅 가능 -->
+  <!-- name 속성 : 라디오 버튼과 체크박스는 하나의 그룹으로 동작, 같은 name을 사용해 그룹으로 묶는다 -->
+  <form>
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p><b>주문할 상품을 선택해 주세요.</b></p>
+      <ul>
+        <li>
+          <label><input type="checkbox" name="prod" value="s_3">선물용 3kg</label>
+          <!-- <input type="number">개 -->
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="s_5" checked>선물용 5kg</label>
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="f_3">가정용 3kg</label>
+        </li>
+        <li>
+          <label><input type="checkbox" name="prod" value="f_5">가정용 5kg</label>
+        </li>
+      </ul>
+      <p><b>포장 선택</b></p>
+      <ul>
+        <li>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+        </li>
+        <li>
+          <label><input type="radio" name="gift" value="yes">선물 포장 안함</label>
+        </li>
+      </ul>
+    </fieldset>
+    
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user-name">이름</label>
+          <input type="text" id="user-name" required>
+        </li>
+        <li>
+          <label for="addr">배송 주소</label>
+          <input type="text" id="addr" required>
+        </li>
+        <li>
+          <label for="mail">이메일</label>
+          <input type="email" id="mail">
+        </li>
+        <li>
+          <label for="phone">연락처</label>
+          <input type="tel" id="phone">
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+</body>
+</html>

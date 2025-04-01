@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>콜백 함수</title>
+  </head>
+  <body>
+    <script>
+      function getData(url, callback) {
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', url);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(JSON.parse(xhr.responseText));
+          }
+        };
+
+        xhr.send();
+      }
+
+      getData('https://jsonplaceholder.typicode.com/todos/1', function (data) {
+        console.log('받은 데이터:', data);
+      });
+
+      // sayHello('홍길동1', function (words) {
+      //   console.log(words);
+      // });
+
+      // sayHello('홍길동2', function (words) {
+      //   document.write(words);
+      // });
+
+      // sayHello('홍길동3', function (words) {
+      //   alert(words);
+      // });
+
+      // function sayHello(name, callback) {
+      //   // words 문자열 만들기
+      //   const words = `안녕하세요, 내 이름은 ${name} 입니다.`;
+
+      //   // 행동은 콜백에 맡김
+      //   callback(words);
+      // }
+    </script>
+  </body>
+</html>

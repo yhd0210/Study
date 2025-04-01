@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상품 소개 페이지</title>
+  <!-- reset.css로 초기화 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+  <!-- normalize.css로 정규화 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <style>
+    body {
+      font-family: 'Noto Sans KR', Arial, sans-serif;
+    }
+    p {
+      color: black;
+      margin: 10px;
+    }
+    h1 {
+      color: brown !important; 
+      margin: 10px;
+    }
+    p {
+      color: blue;
+      margin: 10px;
+    }
+    .foo {
+      color: lightgray;
+      margin: 10px;
+    }
+    #bar {
+      color: aqua;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color: green;">레드향</h1> <!-- green > brown -->
+  <p class="foo" style="color: red;">껍질에 붉은빛</p> <!-- black > blue > lg > red -->
+  <p class="foo">레드향은</p> <!-- blue > lg -->
+  <p id="bar">일반 귤보다 2~3배 크고</p> <!-- blue > aqua -->
+</body>
+</html>

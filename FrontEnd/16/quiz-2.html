@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 2</title>
+	<style>
+		body {
+			font-size:1.2em;
+			text-align:center;
+		}
+		p {
+			color:#f00;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h2>3의 배수 찾기</h2>
+  <script>
+    let num = prompt('3의 배수 찾기');
+
+    if (num !== null && num.trim() !== '') { // 취소 또는 빈 입력 방지
+      num = Number(num);
+      tmp = 1;
+      cnt = 0;
+      while(tmp != num) {
+        if (tmp % 3 == 0) {
+          document.write(`${tmp}, `);
+          cnt += 1;
+        }
+        tmp += 1;
+      }
+      document.write(`<p> ${num}까지의 3의 배수의 갯수 : ${cnt} <p>`)
+    }
+  </script>
+</body>
+</html>

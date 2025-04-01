@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <div id="detail">
+      <ul>
+        <li>원산지 : 에디오피아</li>
+        <li style="display: none">지 역 : 이르가체프 코체레</li>
+        <li style="display: none">농 장 : 게뎁</li>
+      </ul>
+    </div>
+
+    <script>
+      // Do it! DOM을 사용해 텍스트에 접근하기
+      let detail = document.querySelector('#detail > ul');
+
+      console.log(detail.innerText); // diplay : none 인 경우 가지고 오지 않음
+      console.log(detail.innerHTML); // 태그까지 가지고 옮
+      console.log(detail.textContent); // 숨겨진 내역도 가지고 옮
+    </script>
+  </body>
+</html>

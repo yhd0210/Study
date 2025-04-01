@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>text-shadow</title>
+  <style>
+    /* text-shadow: none | <가로 거리> <세로 거리> <번짐 정도> <색상> */
+    /* <가로 거리> : 양수(오른쪽), 음수(왼쪽) */
+    /* <세로 거리> : 양수(아래쪽), 음수(위쪽) */
+    h1 {
+      font-size: 60px;
+    }
+    .shadow1 {
+      color: red;
+      text-shadow: 1px 1px black; /* 가로 거리, 세로 거리, 색상 지정 */
+    }
+    .shadow2 {
+      text-shadow: 5px 5px 3px #ffa500; /* 가로, 세로, 번짐, 색상 */
+    }
+    .shadow3 {
+      color: #fff;
+      text-shadow: 7px -7px 20px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="shadow1">HTML</h1>
+  <h1 class="shadow2">CSS</h1>
+  <h1 class="shadow3">자바스크립트</h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>label 태그 사용하기</title>
+</head>
+<body>
+  <form>
+    <!-- 폼 요소에 라벨을 붙일 때 사용, 연결된 요소는 라벨을 클릭하면 해당 요소로 커서 이동 또는 선택 -->
+    
+    <!-- 레이블 안에 input 태그를 넣는 방식 -->
+    <label>
+      아이디 : (6자 이상)
+      <input type="text">
+    </label>
+
+    <br>
+
+    <!-- label 태그와 폼 요소를 따로 쓰고 연결하기 : for -->
+    <!-- label 태그의 for 속성과 폼 요소의 id 속성을 서로 연결해야 함, for에 해당 id 기입 -->
+    <label for="user-id">아이디 : (6자 이상)</label>
+    <input type="text" id="user-id">
+  </form>
+</body>
+</html>
