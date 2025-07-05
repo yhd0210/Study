@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>화살표 함수</title>
+  </head>
+  <body>
+    <script>
+      // Do it! 매개변수가 있을 때 화살표 함수로 바꾸기
+      let hi = function (user) {
+        document.write(`${user}님, 안녕하세요?`);
+      };
+
+      let hi2 = (user) => `${user}님, 안녕하세요?`;
+
+      hi('홍길동');
+      hi('세종대왕');
+    </script>
+  </body>
+</html>

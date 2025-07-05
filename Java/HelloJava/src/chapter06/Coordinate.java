@@ -1,19 +1,25 @@
 package chapter06;
 
 public class Coordinate {
-    private double x;
-    private double y;
+
+    private double x; // Longitude 경도
+
+    private double y; // Latitude 위도
+
+    // 생성자
+    public Coordinate() {}
 
     public Coordinate(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public Coordinate(Coordinate coordinate){
-        this.x = coordinate.x;
-        this.y = coordinate.y;
+    public Coordinate(Coordinate c) {
+        this.x = c.x;
+        this.y= c.y;
     }
 
+    // getter
     public double getX() {
         return x;
     }
@@ -22,20 +28,13 @@ public class Coordinate {
         return y;
     }
 
-    public void set(double x, double y){
+    // 메서드
+    public void set(double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Coordinate(x=%.2f, y=%.2f)", x, y);
-    }
-
-    public boolean equalTo(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Coordinate that = (Coordinate) obj;
-        return Double.compare(that.x, x) == 0 && Double.compare(that.y, y) == 0;
+    public boolean equalTo(Coordinate c) {
+        return this.x == c.x && this.y == c.y;
     }
 }

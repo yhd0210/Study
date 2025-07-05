@@ -1,0 +1,15 @@
+.container {
+  display: flex; /* 플렉스 컨테이너 */
+  flex-wrap: wrap; /* 두 줄 이상 표시 */
+  justify-content: center; /* 주축 기준 가운데 정렬 */
+}
+.times {
+  padding: 0 30px 40px 30px;
+  margin: 15px;
+  border: 1px solid #ccc;
+  line-height: 2;
+}
+.times h3 {
+  text-align: center;
+  font-weight: bold;
+}

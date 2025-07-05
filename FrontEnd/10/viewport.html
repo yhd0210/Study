@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 뷰포트 속성 -->
+    <!-- width : 뷰포트 넓이 -->
+    <!-- height : 뷰포트 높이 -->
+    <!-- user-scalable : 확대/축소 가능 여부, yes or no -->
+    <!-- initial-scale : 초기 확대/축소한 값, 1~10 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>뷰포트 미설정</title>
+    <style>
+      /* 
+      vw : 1vw는 뷰포트 너비의 1%
+      vh : 1vw는 뷰포트 높이의 1%
+      vmin : 뷰포트의 너비와 높이 중에서 작은 값의 1%, 가로모드이든 세로모드이든 짧은 쪽의 값
+      vmax : 뷰포트의 너비와 높이 중에서 큰 값의 1%, 가로모드든 세로모드든 긴쪽 의 값
+      */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        /* 모바일 뷰포트는 가로 980px~1024px로 설정, 최신 스마트폰 1440x2978 */
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 70vh;
+        font-family: Arial, sans-serif;
+        text-align: left;
+      }
+      .container {
+        width: 80%; /* 가로 크기 고정 */
+        margin: 0 auto;
+        border: 2px solid black;
+        padding: 20px;
+        font-size: 24px;
+        background-color: lightblue;
+      }
+      .viewport-info {
+        margin-top: 20px;
+        font-size: 20px;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>뷰포트 미설정</h1>
+    <div class="container">
+      📢 뷰포트가 없으면 모바일에서 화면이 축소됩니다! 글자가 작고 페이지가 작게
+      보입니다.
+    </div>
+
+    <!-- 뷰포트 크기 및 최대 크기 표시 -->
+    <div class="viewport-info">
+      <p>현재 뷰포트 크기: <span id="viewport-size"></span></p>
+      <p>디바이스 실제 화면 픽셀 크기: <span id="max-viewport-size"></span></p>
+    </div>
+
+    <script>
+      // 뷰포트 크기와 최대 크기를 가져와서 표시하는 함수
+      function updateViewportInfo() {
+        const viewportWidth = window.innerWidth
+        const viewportHeight = window.innerHeight
+        const maxWidth = screen.width
+        const maxHeight = screen.height
+
+        // 뷰포트 크기 표시
+        document.getElementById(
+          'viewport-size'
+        ).textContent = `${viewportWidth} x ${viewportHeight}`
+        // 최대 크기 표시
+        document.getElementById(
+          'max-viewport-size'
+        ).textContent = `${maxWidth} x ${maxHeight}`
+      }
+
+      // 페이지 로드 시 뷰포트 정보 업데이트
+      window.onload = updateViewportInfo
+      // 창 크기 변경 시 뷰포트 정보 업데이트
+      window.onresize = updateViewportInfo
+    </script>
+  </body>
+</html>

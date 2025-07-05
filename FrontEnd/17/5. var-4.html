@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>재선언과 재할당</title>
+  </head>
+  <body>
+    <script>
+      // Do it! 변수의 재선언과 재할당
+      // 3의 배수를 5개 만들어 콘솔에 출력
+      var seed = 3;
+
+      for (let i = 0; i <= 5; i++) {
+        var seed = 5; // 재선언
+        var result = seed * i;
+        // 3 6 9 12 15
+        console.log(result); // 5 10 15 20 25
+      }
+    </script>
+  </body>
+</html>

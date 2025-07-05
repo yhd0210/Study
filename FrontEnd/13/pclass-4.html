@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 선택자</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+      }
+      .item {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      /* Do it! 가상 선택자를 사용해 항목 선택하기 */
+      /* :nth-child(n)에서 n은 1부터 시작함, nth-child(0)은 동작하지 않음*/
+
+      /* 하지만 연산은 좀 다르다... */
+      /* n+4 : 네 번째 자식 요소부터 선택 */
+      /* :nth-child(n + 숫자)에서 n은 0부터 시작함 */
+      /* -n+4 : 네 번째 자식 요소까지 선택 */
+      /* :nth-child(n + 숫자)에서 n은 0부터 시작함 */
+
+      /* 세 번째 자식 요소부터 다섯번째 자식요소까지 선택 */
+      .container :nth-child(n + 3):nth-child(-n + 5) {
+        background-color: #fc2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+    </div>
+  </body>
+</html>

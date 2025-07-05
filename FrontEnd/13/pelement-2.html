@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상 요소</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        width: 400px;
+        padding: 40px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+      }
+
+      /* Do it! 가상 요소를 사용해 내용/스타일 추가하기 */
+      h1::before {
+        content: '*';
+        color: red;
+        margin-right: 5px;
+      }
+      h1::after {
+        content: '🎉';
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS 가상 요소</h1>
+      <p>
+        가상 요소를 사용하면 CSS로 시각적 변화를 줄 수 있습니다. 이는 성능을
+        저하시키지 않으면서 웹 페이지를 꾸밀 수 있는 효율적인 방법입니다.
+      </p>
+    </div>
+  </body>
+</html>

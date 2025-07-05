@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array 객체의 메서드</title>
+    <style>
+      body {
+        line-height: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <script>
+        // Do it! 인수 개수에 따라 splice 메서드 사용하기
+        let arr = ['html', 'css', 'javascript', 'jquery', 'react', 'nodejs'];
+
+        // 인수가 1개일 경우
+        let result1 = arr.splice(4); // index 4부터 끝까지 삭제
+
+        // arr = ['html', 'css', 'javascript', 'jquery'];
+        // result1 = ['react', 'nodejs'];
+        document.write(`원본 배열 : ${arr}<br>`);
+        document.write(`반환된 배열 : ${result1}`);
+        document.write(`<hr>`);
+
+        // 인수가 2개일 경우
+        // arr = ['html', 'css', 'javascript', 'jquery'];
+        let result2 = arr.splice(1, 1); // index 1부터 1개 삭제
+
+        // arr = ['html', 'javascript', 'jquery'];
+        // result2 = ['css'];
+        document.write(`원본 배열 : ${arr}<br>`);
+        document.write(`반환된 배열 : ${result2}`);
+        document.write(`<hr>`);
+
+        // 인수가 3개 이상일 경우 (startIndex, 개수, 추가 요소, ...)
+        let result3 = arr.splice(1, 0, 'typescript'); // splice()를 사용하여 index 1 위치에 'typescript' 삽입 (삭제 개수: 0)
+
+        // arr = ['html', 'typescript', 'javascript', 'jquery'];
+        // result3 = [];
+        document.write(`원본 배열:  ${arr}<br>`);
+        document.write(`반환된 배열 : ${result3}`);
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - addEventListener</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/kitty-1.png" id="cat" />
+    </div>
+
+    <script>
+      // Do it! 이벤트 리스너로 이벤트 처리하기
+      let cat = document.querySelector('#cat');
+
+      cat.addEventListener('mouseover', () => { 
+        cat.src = 'images/kitty-2.png'
+      });
+      cat.addEventListener('mouseout', () => {
+        cat.src = 'images/kitty-1.png';
+      });
+
+      // function changePic() {
+      //   cat.src = 'images/kitty-2.png';
+      // }
+
+      // function originPic() {
+      //   cat.src = 'images/kitty-1.png';
+      // }
+    </script>
+  </body>
+</html>

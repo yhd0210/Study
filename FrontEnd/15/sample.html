@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="스타일 적용할 css" />
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>abc</h1>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        foo()
+      })
+
+      function foo() {
+        let msg = document.getElementsByTagName('h1')[0].textContent
+
+        alert(msg)
+      }
+    </script>
+  </body>
+</html>

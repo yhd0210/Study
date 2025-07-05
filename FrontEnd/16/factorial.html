@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팩토리얼 계산하기</title>
+    <style>
+      body {
+        padding-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>while문을 사용한 팩토리얼 계산</h1>
+    <script>
+      let n = parseInt(prompt('숫자를 입력하세요.', '10'));
+
+      if (n !== null) {
+        // factorial 예시 : 5! = 5 x 4 x 3 x 2 x 1
+        // 곱셈 항등원 : 1, 항등원이란 특정숫자 x 항등원 = 특정숫자
+        // 1! = 1
+        let nFact = 1; // 결과 값
+        let i = 1; // 카운터 값
+
+        while (i <= n) {
+          nFact *= i;
+          i++;
+        }
+
+        msg = n + '! = ' + nFact; // 결과값을 표시할 문자열
+      } else {
+        msg = '값을 입력하지 않았습니다.';
+      }
+
+      document.write(msg);
+    </script>
+  </body>
+</html>

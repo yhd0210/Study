@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>반응형 이미지 만들기</title>
+    <style>
+      p {
+        font-size: 1rem;
+      }
+      .top {
+        /* 부모 요소는 화면 크기에 따라 자동 조절 auto */
+        /* 부모가 이미지 해상도보다 커지면 더이상 커지진 않음 */
+        /* 부모 요소의 크기 * 100%지만, 원본 크기보다 커지진 않음 */
+        max-width: 100%;
+        /* 부모만큼 커짐 */
+        /* width : 100% */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <p>브라우저 창의 크기를 조절해보세요</p>
+    <img src="images/kitten.jpg" alt="베개 뒤에 숨어 있는 고양이" class="top" />
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스모델</title>
+    <style>
+      div {
+        padding: 20px;
+        margin: 10px;
+      }
+      /* block 요소는 float을 적용하면 block 요소의 흐름이 깨짐 */
+      /* float은 문서 흐름에서 제거하고 left 또는 right로 배치 */
+      #box1 {
+        background: #ffd800;
+        float: left;
+      }
+      #box2 {
+        background: #0094ff;
+        float: left;
+      }
+      #box3 {
+        background: #00ff21;
+        clear : both;
+      }
+      #box4 {
+        background: #a874ff;
+        clear : both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+    <div id="box4">박스4</div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classList 추가/삭제 예제</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      div {
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .proceed {
+        background-color: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label> <input type="checkbox" id="agree" /> 필수 항목 동의 </label>
+    </div>
+    <div>
+      <button id="proceed" disabled>다음으로 진행</button>
+    </div>
+
+    <script>
+      const checkbox = document.querySelector("#agree");
+      const button = document.querySelector("#proceed");
+
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          button.disabled = false;
+          button.classList.add("proceed");
+        } else {
+          button.disabled = true;
+          button.classList.remove("proceed");
+        }
+      });
+    </script>
+  </body>
+</html>

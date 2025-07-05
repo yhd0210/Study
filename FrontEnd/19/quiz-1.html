@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>연습문제 1</title>
+	<style>
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		li {
+			font-size: 20px;
+			line-height: 35px;
+			display: flex;
+			align-items: center;
+		}
+		.check {
+			color: #ccc;
+			font-size: 20px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.completed {
+			color: #ccc;
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+	<h1>할 일 목록</h1>
+	<ul>
+		<li><span class="check">&check;</span><span class="task">할 일 1</span></li>
+		<li><span class="check">&check;</span><span class="task">할 일 2</span></li>
+		<li><span class="check">&check;</span><span class="task">할 일 3</span></li>
+		<li><span class="check">&check;</span><span class="task">할 일 4</span></li>
+		<li><span class="check">&check;</span><span class="task">할 일 5</span></li>
+	</ul>
+
+	<script>
+		const checks = document.querySelectorAll('.check');
+		checks.forEach(check => {
+			check.addEventListener('click', function() {
+				this.style.color = '#ccc';
+				const task = this.nextElementSibling;
+				if (task) {
+					task.classList.toggle('completed');
+					this.classList.toggle('completed');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

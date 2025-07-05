@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 3</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #f4f4f4;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      ul {
+        list-style-type: square;
+        margin-left: 20px;
+      }
+      .image-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      table, th, td {
+	      border : 1px solid black;
+        border-collapse: collapse;
+      }
+      table {
+        width : 100%;
+      }
+      th, td {
+	      padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>HTML 실습 예제</h1>
+      <hr>
+      <h2>목록 만들기</h2>
+      <ul>
+        <li>HTML 기본 태그</li>
+        <li>글자와 이미지 태그</li>
+        <li>링크 태그와 목록 태그</li>
+      </ul>
+      <hr>
+      <h2>이미지 삽입하기</h2>
+      <div class="image-container">
+        <img src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1" alt="Python">
+      </div>
+      <hr>
+      <h2>링크 추가하기</h2>
+      <p>
+        공식 HTML 사이트를 방문하여 더 많은 정보를 얻으세요:
+        <a href="https://developer.mozilla.org/ko/docs/Web/HTML">MDN HTML</a>
+      </p>
+      <hr>
+      <h2>테이블 만들기</h2>
+      <table>
+        <tr>
+          <th>이름</th>
+          <th>나이</th>
+          <th>직업</th>
+        </tr>
+        <tr>
+          <td>홍길동</td>
+          <td>30</td>
+          <td>개발자</td>
+        </tr>
+        <tr>
+          <td>이순신</td>
+          <td>40</td>
+          <td>디자이너</td>
+        </tr>
+      </table>
+      <hr>
+      <h2>HTML5 유튜브 영상 삽입하기</h2>
+      <object width="560"height="315" type="text/html" data="https://www.youtube.com/embed/uhogbXGeP-A?si=7WKIZipCcsegq9uO" allowfullscreen></object>
+      <hr>
+      <h2>양식 만들기</h2>
+      <form action="/submit-form" method="post">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit" value="제출">
+      </form>
+      <hr>
+    </div>
+  </body>
+</html>

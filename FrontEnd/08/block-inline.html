@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>블록 요소와 인라인 요소</title>
+  <style>
+    /* body * : 하위에 있는 모든 자손 요소에 적용 */
+    /* body > * : 하위에 있는 직계 자식 요소에 적용 */
+    body * {
+      /* 본문에 포함되는 자손들ㅇ느 모두 테두리를 가짐 */
+      border: 1px solid blue;
+    }
+    .accent {
+      color:red;
+      font-weight:bold;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1 >시간이란...</h1>
+  <div>
+    내일 죽을 것처럼 
+    <p class="accent">오늘</p>
+    을 살고
+  </div>
+  <p><span class = "accent" style="display: inline-block">영원히 살것처럼</span> 내일을 꿈꾸어라.</p>
+
+  <!-- display : block | inline -->
+  
+  <!-- 블록 요소 -->
+  <!-- 기본적으로 새 줄에서 시작하며, 가로폭은 부모 요소의 전체 너비만큼 차지 -->
+  <!-- <div>, <p>, <h1>~<h6>, <ul>, <ol>, <li>... -->
+  
+  <!-- 인라인 요소 -->
+  <!-- 현재 줄에서 연속해서 표시되며, 콘텐츠 크기만큼의 너비를 가짐 -->
+  <!-- <a>, <span>, <strong>, <em>, <table> -->
+
+  <!-- 인라인 블록 -->
+  <!-- 인라인 요소처럼 나란히 배치되면서 블록 요소처럼 크기 조절도 가능 -->
+  <!-- <img>, <button> -->
+</body>
+</html>

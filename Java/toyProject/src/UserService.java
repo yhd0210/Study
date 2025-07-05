@@ -6,22 +6,14 @@ public class UserService {
     private static String choice = "";
 
     public static User startSystem() {
+        User user;
         System.out.println("=== 은행 시스템 ===");
         while (true) {
             if (loginSignUpPage()) {
-                System.out.print("사용자 이름을 입력하세요: ");
-                String userName = scanner.nextLine();
-                System.out.print("비밀번호를 입력하세요: ");
-                String userPW = scanner.nextLine();
-
-                // 로그인 검증
-                for (User user : User.getUserDb()) {
-                    if (user.getUserName().equals(userName) && user.getUserPW().equals(userPW)) {
-                        System.out.println("로그인 성공! 환영합니다, " + userName + "님.");
-                        return user; // 로그인 성공 시 User 객체 반환
-                    }
+                user = BankSystem.login();
+                if(user != null){
+                    return user;
                 }
-                System.out.println("로그인 실패: 사용자 이름 또는 비밀번호가 잘못되었습니다.");
             } else {
                 System.exit(0); // 회원가입 실패 또는 종료 선택 시 프로그램 종료
             }

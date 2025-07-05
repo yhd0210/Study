@@ -14,7 +14,7 @@ public class DayTester {
         System.out.print("일:");
         int d = sc.nextInt();
 
-        Day day1 = new Day(y, m, d);
+        Day day1 = new Day(y, m , d);
         System.out.println("day1 = " + day1);
 
         Day day2 = new Day(day1);
@@ -36,14 +36,11 @@ public class DayTester {
         System.out.println("d3 = " + d3);
         System.out.println("d4 = " + d4);
 
-        Day[] a = new Day[3];
+        Day[] days = new Day[3];
 
-        for (int i = 0; i < a.length; i++) {
-            a[i] = new Day();
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            System.out.println("a[" + i + "] = " + a[i]);
+        for (int i = 0; i < days.length; i++) {
+            days[i] = new Day();
+            System.out.println("a[" + i + "] = " + days[i]);
         }
     }
 }

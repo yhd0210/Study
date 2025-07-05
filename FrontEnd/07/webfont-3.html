@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>웹 폰트 사용하기</title>
+    <style>
+      /* 3. 웹폰트 파일을 직접 호스팅하기 (Self-hosting) : 네트워크 차단 가능성 있을 경우 */
+      @font-face {
+        font-family: 'Nanum Gothic';
+        src: local('Nanum Gothic'), 
+              url('fonts/NanumGothic-Regular.ttf') format('truetype');
+      }
+      .html {
+        font-family: "Nanum Gothic", sans-serif;
+      }
+    </style>
+</head>
+<body>
+  <h1 class="html">HTML</h1>
+  <h1>CSS</h1>
+</body>
+</html>

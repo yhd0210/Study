@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>속성 선택자</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        display: inline-block;
+        margin: 10px;
+      }
+      li a {
+        padding: 5px 20px;
+        font-size: 14px;
+        color: blue;
+        text-decoration: none;
+      }
+      .flat {
+        background: #eee;
+        border: 1px solid #222;
+      }
+
+      /* Do it! class 속성 값에 button이 포함된 요소에 스타일 지정하기 */
+      /* [속성 ~= 값] : 여러 속성 값 중에서 특정 속성값이 포함된 속성 요소를 선택 */
+      /* 일부 일치가 아니라 단어(띄어쓰기로 구분된)가 일치 해야함 */
+      [class~='button'] {
+        box-shadow: rgba(0, 0, 0, 0.4) 4px 4px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#" class="flat">메뉴 1</a></li>
+      <li><a href="#" class="flat">메뉴 2</a></li>
+      <li><a href="#" class="button">메뉴 3</a></li>
+      <li><a href="#" class="flat button">메뉴 4</a></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animation</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #fa0;
+        /* Do it! 2초 동안 애니메이션 실행하기 */
+        animation-name: slideRight;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        /* normal : from -> to */
+        /* reverse : to -> from */
+        /* alternate : from -> to -> from -> to */
+        /* alternate-reverse : to -> from -> to -> from */
+        animation-direction: alternate;
+        /* linear | ease | ease-in | ease-out | ease-in-out | cuvic-beizer(n, n, n,n) */
+        animation-timing-function: linear;
+      }
+
+      /* Do it! @keyframes로 애니메이션 정의하기 */
+      @keyframes slideRight {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(500px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

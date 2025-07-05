@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>즉시 실행 함수</title>
+  </head>
+  <body>
+    <script>
+      //Do it! 매개변수가 있는 즉시 실행 함수 사용하기
+      let sum = 0;
+
+      (function (a, b) {
+        // 매개변수가 있는 익명 함수 선언
+        sum = a + b;
+      })(100, 200); // 즉시 실행을 위한 인수 입력
+
+      document.write(`함수 실행 결과 : ${sum}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>폰트 어썸</title>
+  <!-- 아이콘 폰트 장점 -->
+  <!-- 웹사이트에서 빠르게 아이콘을 추가하고 싶을 때 -->
+  <!-- CSS로 크기나 색상을 쉽게 변경하고 싶을 때 -->
+  <!-- 모든 아이콘을 한번에 로드하여 성능을 최적화하고 싶을 때 -->
+  <link 
+  rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+  <style>
+    i {
+      font-size: 100px;
+      color: brown;
+    }
+  </style>
+  <!-- 아이콘 폰트 특징 -->
+  <!-- 1. 벡터 기반 (SVG처럼 선명) : 확대해도 깨지지 않고, 해상도와 무관하게 선명함 -->
+  <!-- 2. CSS로 스타일 변경 가능 : font-size, color, text-shadow 등을 사용하여 크기, 색상 조절 가능 -->
+  <!-- 3. 빠른 로딩 속도 : 개별 아이콘 이미지보다 한 번에 로드되는 폰트 파일이 더 가벼울 수 있음 -->
+  <!-- 4. 접근성이 좋음 : aria-hidden="true" 등을 활용해 스크린 리더에서 읽히지 않도록 설정 가능 -->
+</head>
+<body>
+  <!-- aria-hidden="true", 스크린 리더 같은 기기에서 숨김 -->
+  <!-- 크기 변경 예시) fa-2x : 2배, fa-3x : 3배 -->
+  <!-- 폰트 사이즈로도 조절 가능하나 클래스 지정한 것이 우선순위가 더 높음 -->
+  <ul>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-house" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-circle-user fa-3x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-image fa-4x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</body>
+</html>

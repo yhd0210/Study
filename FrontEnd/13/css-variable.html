@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS 변수</title>
+    <style>
+      :root {
+        --bg-main-color: #3fda9e;
+        --bg-sub-color: #32bbd3;
+      }
+      div {
+        width: 500px;
+        height: 250px;
+        border: 1px solid black;
+      }
+      .main-box {
+        background: var(--bg-main-color);
+      }
+      .sub-box {
+        background: var(--bg-sub-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-box"></div>
+    <div class="sub-box"></div>
+  </body>
+</html>

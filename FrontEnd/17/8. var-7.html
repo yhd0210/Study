@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>블록 스코프</title>
+  </head>
+  <body>
+    <script>
+        // Do it! const 변수의 재선언과 재할당
+
+        const user = 'Kim';
+        console.log(`My name is ${user}`); // My name is Kim
+        
+        const user = 'Lee '; // const 예약어 지워도 실제 실행해보면 콘솔에 오류 발생
+        console.log(`My name is ${user}`);
+
+    </script>
+  </body>
+</html>

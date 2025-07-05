@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1. 클래스가 "item"인 <div> 요소 중, 
+        data-category 속성이 "fruit"인 요소와 
+        data-category 속성이 "vegetable"인 요소를 선택합니다. */
+      /* 2. 각 요소 data-category 속성을 기준으로 마우스를 호버할 때 
+        배경색이 바뀌도록 지정해야 합니다. */
+      .item {
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      /* data-category가 "fruit"인 요소에 대한 스타일 */
+      .item[data-category="fruit"]:hover {
+        background-color: lightgreen;
+      }
+
+      /* data-category가 "vegetable"인 요소에 대한 스타일 */
+      .item[data-category="vegetable"]:hover {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item" data-category="fruit">Apple</div>
+    <div class="item" data-category="vegetable">Carrot</div>
+    <div class="item" data-category="fruit">Banana</div>
+    <div class="item" data-category="fruit">Orange</div>
+    <div class="item" data-category="vegetable">Tomato</div>
+  </body>
+</html>

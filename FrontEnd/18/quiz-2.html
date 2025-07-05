@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현재 시간 보기</title>
+  <style>
+    #container {
+      width: 200px;
+      margin: 50px auto;
+    }
+    button {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 20px 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <button id="bttn">현재 시간 보기</button>
+  </div>
+
+  <script>
+    document.getElementById('bttn').onclick = displayTime;
+
+    function displayTime() {
+      let popupWidth = 400;
+      let popupHeight = 200;
+
+      // 화면 중앙 좌표 계산
+      let left = (window.innerWidth - popupWidth) / 2 + window.screenX;
+      let top = (window.innerHeight - popupHeight) / 2 + window.screenY;
+
+      window.open("quiz-1.html", "popupWindow", `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`);
+    }
+  </script>
+</body>
+</html>
