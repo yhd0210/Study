@@ -1,51 +1,51 @@
 import pandas as pd
+from collections import Counter
 
-# 엑셀 파일 경로 설정
-file_path = 'C:/main/Lotto-645.xlsx'
+# ✅ header=2로 지정 (엑셀 상 3번째 줄 → Python index 2)
+file_path = 'lotto.xlsx'
+df = pd.read_excel(file_path, header=2)
 
-# 엑셀 파일 읽기
-df = pd.read_excel(file_path)
+# 컬럼명 확인
+print("✅ 컬럼명:", df.columns.tolist())
 
-# 4행부터 1136행까지 N열부터 S열까지 추출 (0-based index로 3부터 시작)
-numbers_df = df.iloc[3:1136, 13:19]
+# 컬럼명을 문자열로 통일 (예방 차원)
+df.columns = df.columns.map(str)
 
-# 열 이름을 번호로 변경 (기존 열 이름이 모두 Unnamed로 되어 있어서 이해하기 쉽게 변경)
-numbers_df.columns = ['1', '2', '3', '4', '5', '6']
+# 당첨번호 및 보너스 컬럼
+number_cols = ['1', '2', '3', '4', '5', '6']
+bonus_col = '보너스'
 
-# NaN 값을 제거하기 위해 모든 값을 정수로 변환
-numbers_df = numbers_df.dropna().astype(int)
+# 컬럼 누락 여부 검사
+missing_cols = [col for col in number_cols + [bonus_col] if col not in df.columns]
+if missing_cols:
+    raise ValueError(f"❗ 해당 컬럼이 없습니다: {missing_cols}")
 
-# 확인하려는 숫자 리스트들
-check_numbers_list = [
-    [8, 14, 27, 33, 39, 42],
-    [22, 16, 11, 33, 44, 2],
-    [5, 6, 13, 27, 40, 41],
-    [12, 22, 23, 37, 38, 42],
-    [2 ,12 ,16 ,18 ,36 ,42],
-    [4, 21, 24, 35, 42, 44],
-    [8,13,25,39,42,45]
-]
+# -----------------------------
+# 1등 & 2등 번호 목록
+# -----------------------------
+first_prize_numbers = df[number_cols].apply(lambda row: sorted(row.values), axis=1).tolist()
+second_prize_numbers = df[number_cols + [bonus_col]].apply(lambda row: sorted(row.values), axis=1).tolist()
 
-# 결과 저장
-results = []
+# 입력
+input_numbers = [5, 6, 11, 27, 43, 44]
+input_numbers_set = set(input_numbers)
 
-# 각 숫자 리스트에 대해 처리
-for check_numbers in check_numbers_list:
-    matching_rows = []
-    for i, row in numbers_df.iterrows():
-        if set(check_numbers) == set(row.values):  # 모든 숫자가 동일하면
-            matching_rows.append((i + 4, '1st'))  # 행 번호와 '1st' 추가
-        elif len(set(check_numbers) & set(row.values)) == 5:  # 5개의 숫자가 일치하는 경우
-            matching_rows.append((i + 4, '3rd', list(set(check_numbers) & set(row.values))))  # 행 번호, '3rd', 일치하는 숫자들 추가
-        elif len(set(check_numbers) & set(row.values)) == 4:  # 4개의 숫자가 일치하는 경우
-            matching_rows.append((i + 4, '4th', list(set(check_numbers) & set(row.values))))  # 행 번호, '4th', 일치하는 숫자들 추가
-    results.append((check_numbers, matching_rows))
+is_first_prize = False
+is_second_prize = False
+
+for idx, row in df.iterrows():
+    win_nums = set([row['1'], row['2'], row['3'], row['4'], row['5'], row['6']])
+    bonus_num = row['보너스']
+    
+    # 맞힌 개수
+    matched = len(win_nums & input_numbers_set)
+
+    if matched == 6:
+        is_first_prize = True
+    elif matched == 5 and bonus_num in input_numbers_set:
+        is_second_prize = True
 
 # 결과 출력
-for check_numbers, matches in results:
-    print(f"체크 숫자: {check_numbers}")
-    if matches:
-        for result in matches:
-            print(f"  행 번호: {result[0]}, 등수: {result[1]}, 중복된 숫자: {result[2] if len(result) > 2 else 'N/A'}")
-    else:
-        print("  일치하는 행이 없습니다.")
+print(f"\n🎯 1등 당첨 여부: {is_first_prize}")
+print(f"🎯 2등 당첨 여부: {is_second_prize}")
+print(f"🎯 1등과 2등 모두 등장 여부: {is_first_prize and is_second_prize}")
